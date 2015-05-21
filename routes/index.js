@@ -26,7 +26,7 @@ sequelize.sequelize.authenticate().then(function(err) {
 
 router.get('/', function(req, res, next) {
   //mostramos todas las ciudades
-  res.render('hola mundo')
+  res.send('hola mundo');
 });
 
 //CIUDADES

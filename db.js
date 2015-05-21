@@ -1,6 +1,6 @@
 var Sequelize = require("sequelize")
-var sequelize = new Sequelize('cines-app-db', 'cine', 'cines.2015', {
-  host: "cines-app.database.windows.net",
+var sequelize = new Sequelize('cines', 'cine', 'cines.2015', {
+  host: "cines-app-db.database.windows.net",
   port: 1433,
   dialect: 'mssql',
 })
