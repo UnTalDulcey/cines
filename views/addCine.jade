@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+
+    form(method="POST",action="/crear/cine")
+        label(for="nombre") Nombre
+        input(type="text",name="nombre")
+        br
+        label(for="direccion") Direccion
+        input(type="text",name="direccion")
+        br
+        label(for="telefono") Telefono
+        input(type="text",name="telefono")
+        br
+        label(for="ciudad") Ciudad
+        select(name="ciudad")
+          for ciudades in data
+            option(value = ciudades.id ) #{ciudades.name}
+        br
+        input(type="submit",value="Crear ciudad")

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+
+    form(method="POST",action="/crear/funcion")
+        label(for="hora") Hora
+        input(type="text",name="hora")
+        br
+        label(for="dia") Dia
+        input(type="text",name="dia")
+        br
+        label(for="cine") Cine
+        select(name="cine")
+          for cine in data
+            option(value = cine.id ) #{cine.name}
+        br
+        label(for="pelicula") Pelicula
+        select(name="pelicula")
+          for pelicula in data2
+            option(value = pelicula.id ) #{pelicula.name}
+        br
+        input(type="submit",value="Crear Funciones")

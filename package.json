@@ -1,0 +1,24 @@
+{
+  "name": "cines",
+  "version": "1.0.0",
+  "description": "cartelera de cines",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.3",
+    "jade": "^1.9.2",
+    "mysql": "^2.6.2",
+    "sequelize": "^3.0.1",
+    "winston": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "cines"
+  ],
+  "author": "cristian dulcey",
+  "license": "ISC"
+}
