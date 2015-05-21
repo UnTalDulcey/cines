@@ -8,12 +8,12 @@ var funciones = require('../models/funciones');
 var sequelize = require('../db');
 
 //conexion ok
-
-// sequelize.sequelize.authenticate().then(function(err) {
-//     console.log('Connection has been established successfully.');
-//   }, function (err) {
-//     console.log('Unable to connect to the database:', err);
-//   });
+//
+sequelize.sequelize.authenticate().then(function(err) {
+    console.log('Connection has been established successfully.');
+  }, function (err) {
+    console.log('Unable to connect to the database:', err);
+  });
 
 //generar base de datos
 // sequelize.sequelize
@@ -23,6 +23,11 @@ var sequelize = require('../db');
 //   }, function (err) {
 //     console.log('An error occurred while creating the table:', err);
 //   });
+
+router.get('/', function(req, res, next) {
+  //mostramos todas las ciudades
+  res.render('hola mundo')
+});
 
 //CIUDADES
 router.get('/ciudades', function(req, res, next) {
