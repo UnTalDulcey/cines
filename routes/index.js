@@ -141,7 +141,7 @@ router.get("/crear/funcion", function(req, res){
 
 router.post("/crear/funcion", function(req,res){
 	//creamos un objeto con los datos a insertar del usuario
-  funcionesyou.create({ hour: req.body.hora,
+  funciones.create({ hour: req.body.hora,
                 day:req.body.dia,
                 cineId:req.body.cine,
                 peliculaId:req.body.pelicula,

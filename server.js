@@ -7,7 +7,7 @@ var server = express();
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }));
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 // view engine setup
 server.use('/', routes);
 server.use(express.static(__dirname + '/public'));
