@@ -5,14 +5,38 @@ var peliculas = require('./peliculas');
 var cines = require('./cines');
 
 var funciones = db.sequelize.define('funciones', {
-  hour:Sequelize.INTEGER,
-  day: Sequelize.DATE,
+  hour:{
+    type: Sequelize.STRING,
+    primaryKey: true,
+  },
+  day:{
+    type: Sequelize.DATE,
+    primaryKey: true,
+  } ,
+  peliculaId: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            references: {
+              model: peliculas,
+              key:   'id',
+
+            }
+        },
+  cineId: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            references: {
+              model: cines,
+              key:   'id',
+              
+            }
+        }
+
 },
   {
    timestamps: false,
    createdAt: false,
 });
-peliculas.belongsToMany(cines,{ through: funciones })
-cines.belongsToMany(peliculas,{through: funciones})
+
 
 module.exports = funciones;
