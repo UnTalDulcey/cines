@@ -1,19 +1,30 @@
 var db = require('../db');
 var logger = require('../logger');
 var Sequelize = require("sequelize")
-var ciudades = require('./ciudades');
 
 var cines = db.sequelize.define('cines', {
-  name: Sequelize.STRING,
-  address: Sequelize.STRING,
-  phone: Sequelize.STRING,
+  id:{
+    type: Sequelize.INTEGER,
+    primaryKey:true,
+    unique: true,
+    autoIncrement: true,
+  },
+  name:{
+    type: Sequelize.STRING,
+  },
+  address: {
+    type: Sequelize.STRING,
+  },
+  phone: {
+    type: Sequelize.STRING,
+  },
+  city: {
+    type: Sequelize.STRING,
+  },
 },
   {
    timestamps: false,
    createdAt: false,
 });
-
-
-cines.belongsTo(ciudades,{as: 'ciudad'})
 
 module.exports = cines;

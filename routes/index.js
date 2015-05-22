@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var logger = require('../logger');
-var ciudades = require('../models/ciudades');
 var peliculas = require('../models/peliculas');
 var cines = require('../models/cines');
 var funciones = require('../models/funciones');
@@ -16,13 +15,44 @@ var sequelize = require('../db');
 //   });
 
 //generar base de datos
-// sequelize.sequelize
-//   .sync({ force: true })
-//   .then(function(err) {
-//     console.log('It worked!');
-//   }, function (err) {
-//     console.log('An error occurred while creating the table:', err);
+sequelize.sequelize
+  .sync({ force: true })
+  .then(function(err) {
+    console.log('It worked!');
+  }, function (err) {
+    console.log('An error occurred while creating the table:', err);
+  });
+
+// var request = require("request"),
+// 	cheerio = require("cheerio"),
+// 	url = "http://www.imdb.com/showtimes/cinema/ES/ci1030037";
+//
+// request(url, function (error, response, body) {
+// 	if (!error) {
+//     var parsedResults = [];
+//     var $ = cheerio.load(body);
+//     $("[itemtype='http://schema.org/Movie']").each(function() {
+//       normalizeWhitespace: true;
+//       var link = $(this);
+//       var image = link.find('img').attr('src');
+//       var name = link.find('.info').find('span').children('a').text();
+//       var hour = link.find('.info').find('.showtimes').text();
+//       var hour=hour.replace(/\n/g, "");
+//       var hour=hour.replace(/[ ]+/g, "");
+//       if (name != ''){
+//         var metadata = {
+//           title: name,
+//           imagen: image,
+//           hora: hour,
+//         };
+//         parsedResults.push(metadata);
+//       }
 //   });
+//   logger.info(parsedResults);
+// 	} else {
+// 		console.log("We’ve encountered an error: " + error);
+// 	}
+// });
 
 router.get('/', function(req, res, next) {
   //mostramos todas las ciudades

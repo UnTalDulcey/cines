@@ -2,7 +2,6 @@ var db = require('../db');
 var logger = require('../logger');
 var Sequelize = require("sequelize")
 var peliculas = require('./peliculas');
-var cines = require('./cines');
 
 var funciones = db.sequelize.define('funciones', {
   hour:{
@@ -13,30 +12,25 @@ var funciones = db.sequelize.define('funciones', {
     type: Sequelize.DATE,
     primaryKey: true,
   } ,
+  tipo:{
+    type: Sequelize.STRING,
+  } ,
   peliculaId: {
             type: Sequelize.INTEGER,
             primaryKey: true,
             references: {
               model: peliculas,
               key:   'id',
-
             }
-        },
-  cineId: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            references: {
-              model: cines,
-              key:   'id',
-              
-            }
-        }
-
+  },
 },
   {
    timestamps: false,
    createdAt: false,
 });
 
+//http://www.imdb.com/showtimes/cinema/US/ci1030037/
+//http://www.imdb.com/showtimes/cinema/ES/ci1030038
+//http://www.imdb.com/showtimes/cinema/ES/ci61874426
 
 module.exports = funciones;
