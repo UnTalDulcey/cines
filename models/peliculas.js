@@ -20,6 +20,19 @@ var peliculas = db.sequelize.define('peliculas', {
   duration: {
     type: Sequelize.STRING(),
   },
+  hour:{
+    type: Sequelize.STRING,
+    primaryKey: true,
+  },
+  day:{
+    type: Sequelize.DATEONLY,
+    primaryKey: true,
+  },
+  tipo:{
+      type:   Sequelize.ENUM,
+      values: ['2D', '3D','2D - 3D'],
+      primaryKey: true,
+  },
   cineId: {
             type: Sequelize.INTEGER,
             primaryKey: true,

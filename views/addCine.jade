@@ -15,8 +15,13 @@ block content
         input(type="text",name="telefono")
         br
         label(for="ciudad") Ciudad
-        select(name="ciudad")
-          for ciudades in data
-            option(value = ciudades.id ) #{ciudades.name}
+        input(type="text",name="ciudad")
         br
-        input(type="submit",value="Crear ciudad")
+        label(for="url") Url
+        input(type="text",name="url")
+        br
+        label(for="logo") Logo
+        input(type="text",name="logo")
+        br
+
+        input(type="submit",value="Crear cine")

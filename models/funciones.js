@@ -13,8 +13,11 @@ var funciones = db.sequelize.define('funciones', {
     primaryKey: true,
   } ,
   tipo:{
-    type: Sequelize.STRING,
-  } ,
+      type:   Sequelize.ENUM,
+      values: ['2D', '3D','2D - 3D'],
+      primaryKey: true,
+  }
+  ,
   peliculaId: {
             type: Sequelize.INTEGER,
             primaryKey: true,

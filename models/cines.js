@@ -21,10 +21,24 @@ var cines = db.sequelize.define('cines', {
   city: {
     type: Sequelize.STRING,
   },
+  url: {
+    type: Sequelize.STRING,
+  },
+  logo: {
+    type: Sequelize.STRING,
+  },
 },
   {
    timestamps: false,
    createdAt: false,
+  //  getterMethods: {
+  //       fullUrl: function () {
+  //           return this.getDataValue('url')+'hola';
+  //       }
+  //   },
 });
+//http://www.imdb.com/showtimes/cinema/US/ci1030037/
+//http://www.imdb.com/showtimes/cinema/ES/ci1030038
+//http://www.imdb.com/showtimes/cinema/ES/ci61874426
 
 module.exports = cines;
