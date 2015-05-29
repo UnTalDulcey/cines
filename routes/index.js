@@ -39,7 +39,7 @@ router.get('/cines', function(req, res, next) {
 
 
   cines.all().then(function(projects) {
-    res.status(200).json(projects)
+    res.status(200).jsonp(projects)
   })
 });
 
@@ -71,7 +71,7 @@ router.post("/crear/cine", function(req,res)
 router.get('/peliculas', function(req, res, next) {
   //mostramos todas las ciudades
   peliculas.all().then(function(projects) {
-    res.status(200).json(projects)
+    res.status(200).jsonp(projects)
   })
 });
 
@@ -79,7 +79,7 @@ router.get('/peliculas/:id', function(req, res) {
   var f = new Date();
   var fecha = f.getFullYear()+'-'+(f.getMonth()+1)+'-'+f.getDate();
   peliculas.findAll({ where: { cineId: req.params.id,day:fecha } }).then(function(projects) {
-    res.status(200).json(projects)
+    res.status(200).jsonp(projects)
   })
 });
 
